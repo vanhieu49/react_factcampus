@@ -2,29 +2,15 @@ import "./App.css";
 
 import Header from "./component/CompHeader";
 import Footer from "./component/CompFooter";
+import CompContent from './component/CompContent'
 
 function App() {
   return (
     <div>
       <Header />
-      <h5>content</h5>
-      <h5>content</h5>
-      <h5>content</h5>
-      <h5>content</h5>
-      <h5>content</h5>
-      <h5>content</h5>
-      <h5>content</h5>
-      <h5>content</h5>
-      <h5>content</h5>
-      <h5>content</h5>
-      <h5>content</h5>
-      <h5>content</h5>
+    
+      <CompContent />
 
-      <h5>content</h5>
-      <h5>content</h5>
-
-      <h5>content</h5>
-      <h5>content</h5>
       <Footer />
     </div>
   );
