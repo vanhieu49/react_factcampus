@@ -8,26 +8,8 @@ function App() {
   return (
     <div>
       <Header />
-      <Slider/>
-      <h5>content</h5>
-      <h5>content</h5>
-      <h5>content</h5>
-      <h5>content</h5>
-      <h5>content</h5>
-      <h5>content</h5>
-      <h5>content</h5>
-      <h5>content</h5>
-      <h5>content</h5>
-      <h5>content</h5>
-      <h5>content</h5>
-      <h5>content</h5>
+      <Slider />
 
-      <h5>content</h5>
-      <h5>content</h5>
-
-      <h5>content</h5>
-      <h5>content</h5>
-      
       <Footer />
     </div>
   );
