@@ -203,3 +203,131 @@ hr{
       padding:20px 0;
   }
 }
+
+
+
+/* ================= begin slider ==============*/
+a{
+  text-decoration: none;
+}
+img{
+  vertical-align: top;
+  max-width:100%;
+  height: auto;
+}
+._block{
+  display: block;
+  outline: 0 none;
+}
+
+#carousel{
+  position: relative;
+  
+}
+.carousel_container{
+  position: relative;
+  padding-top: 175px;
+  
+}
+.carousel_container .carousel{}
+.carousel_container .ca_inital{}
+.carouser_container .ca_dotted{}
+
+.carousel .ca_list{}
+.ca_list .ca_track{}
+.ca_list .ca_track .ca_slide[aria-hidden=true]{
+  display: none;
+}
+.ca_list .ca_track .ca_slide a{
+  cursor: pointer;
+}
+.ca_list .ca_track .ca_slide a div{
+  position: relative;
+}
+.ca_list .ca_track .ca_slide a div .ca_panel{
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  color: white;
+}
+.ca_list .ca_track .ca_slide a div .ca_panel h3{
+ font-size: 45px;
+}
+.ca_list .ca_track .ca_slide a div .ca_panel p{
+  font-size: 30px;
+}
+
+.ca_grid{
+  margin: 0 auto;
+  max-width: 98rem;
+  padding: 0 10%;
+}
+.ca_grid .ca_func{
+ position: relative;
+ bottom: 4rem;
+}
+.ca_grid .ca_func .ca_control{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+}
+.ca_grid .ca_func .ca_control button{
+  border: none;
+  padding: 10px;
+  background: white;
+  /* color: #d3d3d3; */
+  cursor: pointer;
+  opacity: 0.7;
+
+  transition-property: all;
+  transition-duration: .2s;
+  transition-timing-function: ease-out;
+
+}
+.ca_grid .ca_func .ca_control button:hover{
+  opacity: 1;
+}
+.ca_grid .ca_func .ca_control button[aria-label="Previous"]{
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.ca_grid .ca_func .ca_control button[aria-label="Next"]{
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.ca_grid .ca_func .ca_dots{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.ca_grid .ca_func div.ca_dots button{
+  border-radius: 50%;
+  padding: 7px;
+  border: none;
+  outline: none;
+  background-color: #454545;
+  cursor: pointer;
+  opacity: 0.7;
+  transition-property: all;
+  transition-duration: .2s;
+  transition-timing-function: ease-out;
+}
+.ca_grid .ca_func div.ca_dots button:hover{
+  opacity: 1;
+}
+.ca_grid .ca_func div.ca_dots button[aria-selected=true]{
+  width: 50px;
+  border-radius: 8px;
+  background: white;
+  opacity: 1;
+}
+
+.btn{
+  display: none;
+}
+.active{
+  display: block;
+}
+/* =================== end slider ==================== */
