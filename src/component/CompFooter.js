@@ -23,19 +23,6 @@ function CompFooter() {
                 Gangnam-gu, Seoul
               </p>
             </li>
-            <hr />
-            <li>
-              <p>Mail-order business report number: 2017-Seoul Gangnam-01977</p>
-            </li>
-            <li className="cool-link">
-              <p>
-                <span>School establishment operation registration number</span>:
-                No. 572 Fast Campus
-              </p>
-            </li>
-            <li>
-              <p>Distance Lifelong Education Center</p>
-            </li>
           </ul>
         </div>
         <div className="footer__content-col">
@@ -75,17 +62,6 @@ function CompFooter() {
                 <span>Notice</span>
               </p>
             </li>
-            <hr />
-            <li>
-              <p>
-                <span>Instructor support</span>
-              </p>
-            </li>
-            <li>
-              <p>
-                <span>Recruitment Guide</span>
-              </p>
-            </li>
           </ul>
         </div>
         <div className="footer__content-col">
@@ -107,7 +83,45 @@ function CompFooter() {
             <li>
               <p>- Excluding lunch time (12:00~13:00)</p>
             </li>
-            <hr />
+          </ul>
+        </div>
+      </div>
+      <div className="footer__content">
+        <div className="footer__content-col">
+          <ul>
+            <li />
+            <li>
+              <p>Mail-order business report number: 2017-Seoul Gangnam-01977</p>
+            </li>
+            <li className="cool-link">
+              <p>
+                <span>School establishment operation registration number</span>:
+                No. 572 Fast Campus
+              </p>
+            </li>
+            <li>
+              <p>Distance Lifelong Education Center</p>
+            </li>
+          </ul>
+        </div>
+        <div className="footer__content-col">
+          <ul>
+            <li />
+            <li>
+              <p>
+                <span>Instructor support</span>
+              </p>
+            </li>
+            <li>
+              <p>
+                <span>Recruitment Guide</span>
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div className="footer__content-col">
+          <ul>
+            <li />
             <li>
               <p>Subscribe to the newsletter</p>
             </li>

@@ -1,9 +1,11 @@
+import img from "../images/global-banner-web.png";
+
 function CompHeader() {
   return (
     <header className="header">
       <div className="header__top">
         <div className="header__top-img">
-          <img src={require("../img/global-banner-web.png")} alt="logo" />
+          <img src={img} alt="logo" />
           <div className="header__top-icon">
             <i className="fas fa-times" />
           </div>
