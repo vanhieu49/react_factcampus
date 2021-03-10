@@ -4,6 +4,26 @@ class CompContent_4 extends React.Component {
         super(props);
     }
     render(){
+      const cell1 = {
+        tag: ['Lifetime collection','100 hours','React', 'View'],
+        title: 'One-stop front-end development super-gap package Online.',
+        des: '  Lifetime collection with a one-time payment of 1,000 won per hour | Front-end study, what should I start with?  Don\'t worry any more! Over 20 stacks that a frontend developer must tackle can be mastered in a 100-hour online course. Check out the\'Completed Curriculum for Front-End Developers\', which includes hands-on practice on high-quality projects that can be used as a service now!'
+      }
+      const cell2 = {
+        tag: ['Lifetime collection','Python'],
+        title: 'Python Web Development All-in-One Package Online.',
+        des: 'It\'s easy to learn, but Python with high practical use, from basic grammar to practical examples! Start with online lectures!'
+      }
+      const cell3 = {
+        tag:['Lifetime collection','Data Analysis Tool','Training'],
+        title:'One-stop data analysis tools super-gap package Online.',
+        des:'7 data analysis tools in one lecture? Launching of super cost performance lectures for beginners! Learn data analysis easier and more fun with 200 hands-on exercises and project progress for each tool!'
+      }
+      const cell4 = {
+        tag: ['Lifetime collection','Machine learning','Python'],
+        title:'Learn while solving like a quiz Python Machine Learning 300 + practice package online.',
+        des:'Machine learning as easy and fun as a game! Solve more than 300 problems to get your hands on experience.'
+      }
         return(
           <div className="content4">
             <h2 className="title_content">Programming/Data Science Popular Lecture</h2>
@@ -16,19 +36,13 @@ class CompContent_4 extends React.Component {
                 </div>
                 <div className="cell_body">
                   <div className="cell_tag">
-                    <span className="tag">Lifetime collection</span>
-                    <span className="tag">100 hours</span>
-                    <span className="tag">React</span>
-                    <span className="tag">View</span>
+                    {cell1.tag.map((value, index)=>{
+                          return <span  className="tag" key={value}>{value}</span>
+                        })}
                   </div>
-                  <div className="title_cell">One-stop front-end development super-gap package Online.</div>
+                  <div className="title_cell">{cell1.title}</div>
                   <div className="des_cell">
-                    Lifetime collection with a one-time payment of 1,000 won per hour | 
-                    Front-end study, what should I start with? 
-                    Don't worry any more! 
-                    Over 20 stacks that a frontend developer must tackle can be mastered in a 100-hour online course. 
-                    Check out the'Completed Curriculum for Front-End Developers', 
-                    which includes hands-on practice on high-quality projects that can be used as a service now!
+                   {cell1.des}
                   </div>
                 </div>
               </div>
@@ -40,15 +54,15 @@ class CompContent_4 extends React.Component {
                 </div>
                 <div className="cell_body">
                   <div className="cell_tag">
-                    <span className="tag">Lifetime collection</span>
-                    <span className="tag">Python</span>
+                    {cell2.tag.map((value, index)=>{
+                          return <span  className="tag" key={value}>{value}</span>
+                        })}
                   </div>
                   <div className="title_cell">
-                    Python Web Development All-in-One Package Online.
+                    {cell2.title}
                   </div>
                   <div className="des_cell">
-                    It's easy to learn, but Python with high practical use, from basic grammar to practical examples! 
-                    Start with online lectures!
+                    {cell2.des}
                   </div>
                 </div>
               </div>
@@ -60,17 +74,15 @@ class CompContent_4 extends React.Component {
                 </div>
                 <div className="cell_body">
                   <div className="cell_tag">
-                    <span className="tag">Lifetime collection</span>
-                    <span className="tag">Data Analysis Tool</span>
-                    <span className="tag">Training</span>
+                    {cell3.tag.map((value, index)=>{
+                          return <span  className="tag" key={value}>{value}</span>
+                        })}
                   </div>
                   <div className="title_cell">
-                    One-stop data analysis tools super-gap package Online.
+                    {cell3.title}
                   </div>
                   <div className="des_cell">
-                    7 data analysis tools in one lecture? 
-                    Launching of super cost performance lectures for beginners! 
-                    Learn data analysis easier and more fun with 200 hands-on exercises and project progress for each tool!
+                    {cell3.des}
                   </div>
                 </div>
               </div>
@@ -82,14 +94,12 @@ class CompContent_4 extends React.Component {
                 </div>
                 <div className="cell_body">
                   <div className="cell_tag">
-                    <span className="tag">Lifetime collection</span>
-                    <span className="tag">Machine learning</span>
-                    <span className="tag">Python</span>
+                    {cell4.tag.map((value, index)=>{
+                          return <span  className="tag" key={value}>{value}</span>
+                        })}
                   </div>
-                  <div className="title_cell">Learn while solving like a quiz Python Machine 
-                    Learning 300 + practice package online.</div>
-                  <div className="des_cell">Machine learning as easy and fun as a game! 
-                    Solve more than 300 problems to get your hands on experience.
+                  <div className="title_cell">{cell4.title}</div>
+                  <div className="des_cell">{cell4.des}
                   </div>
                 </div>
               </div>

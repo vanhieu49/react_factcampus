@@ -4,6 +4,27 @@ class CompContent_3 extends React.Component {
         super(props);
     }
     render(){
+
+      const cell1 = {
+        tag: ['Kwon Oh-sang','Financial Statements','Company analysis', 'M&amp;A','IPO'],
+        title: 'Kwon Oh Sang Financial Academy-Financial Statement Analysis Basics',
+        des: ' Online first public CPA/CFA star lecturer Kwon Oh-sang, a real practical story from accountant'
+      }
+      const cell2 = {
+        tag: ['Lifetime collection','Premier'],
+        title: 'Finished in 10 Minutes Xida Premier Online.',
+        des: 'Young, Al, No, 10 minutes a day, it takes only a month to finish the sida premiere! 1,500 video sources + shortcut key calendar provided just by taking the course!'
+      }
+      const cell3 = {
+        tag:['Lifetime collection','After effect','C4D'],
+        title:'Motion Graphics Super Gap Package Online.',
+        des:'2D&amp;3D motion graphics, Photoshop, and Illustrator are all at once!'
+      }
+      const cell4 = {
+        tag: ['Lifetime collection','Automation','No code', 'Business automation'],
+        title:'Online, a super-gap package of repetitive tasks that ends with 7 tools.',
+        des:'Lectures for you who are hit by repetitive work and overtime. Whether it\'s office, finance, marketing or design, don\'t worry now! Here are some tips on how to work smartly, quickly and efficiently! Meet the 7 solution tools now.'
+      }
         return(
                 <div className="content3">
                   <h2 className="title_content">Marketing/Creative/Finance Popular Lecture</h2>
@@ -16,15 +37,13 @@ class CompContent_3 extends React.Component {
                       </div>
                       <div className="cell_body">
                         <div className="cell_tag">
-                          <span className="tag">Kwon Oh-sang</span>
-                          <span className="tag">Financial Statements</span>
-                          <span className="tag">Company analysis</span>
-                          <span className="tag">M&amp;A</span>
-                          <span className="tag">IPO</span>
+                          {cell1.tag.map((value, index)=>{
+                            return <span  className="tag" key={value}>{value}</span>
+                          })}
                         </div>
-                        <div className="title_cell">Kwon Oh Sang Financial Academy-Financial Statement Analysis Basics</div>
+                        <div className="title_cell">{cell1.title}</div>
                         <div className="des_cell">
-                          Online first public CPA/CFA star lecturer Kwon Oh-sang, a real practical story from accountant
+                          {cell1.des}
                         </div>
                       </div>
                     </div>
@@ -36,15 +55,15 @@ class CompContent_3 extends React.Component {
                       </div>
                       <div className="cell_body">
                         <div className="cell_tag">
-                          <span className="tag">Lifetime collection</span>
-                          <span className="tag">Premier</span>
+                          {cell2.tag.map((value, index)=>{
+                              return <span  className="tag" key={value}>{value}</span>
+                            })}
                         </div>
                         <div className="title_cell">
-                          Finished in 10 Minutes Xida Premier Online.
+                          {cell2.title}
                         </div>
                         <div className="des_cell">
-                          Young, Al, No, 10 minutes a day, it takes only a month to finish the sida premiere! 
-                          1,500 video sources + shortcut key calendar provided just by taking the course!
+                          {cell2.des}
                         </div>
                       </div>
                     </div>
@@ -56,15 +75,15 @@ class CompContent_3 extends React.Component {
                       </div>
                       <div className="cell_body">
                         <div className="cell_tag">
-                          <span className="tag">Lifetime collection</span>
-                          <span className="tag">After effect</span>
-                          <span className="tag">C4D</span>
+                          {cell3.tag.map((value, index)=>{
+                              return <span  className="tag" key={value}>{value}</span>
+                            })}
                         </div>
                         <div className="title_cell">
-                          Motion Graphics Super Gap Package Online.
+                          {cell2.title}
                         </div>
                         <div className="des_cell">
-                          2D&amp;3D motion graphics, Photoshop, and Illustrator are all at once!
+                          {cell2.des}
                         </div>
                       </div>
                     </div>
@@ -76,16 +95,12 @@ class CompContent_3 extends React.Component {
                       </div>
                       <div className="cell_body">
                         <div className="cell_tag">
-                          <span className="tag">Lifetime collection</span>
-                          <span className="tag">Automation</span>
-                          <span className="tag">No code</span>
-                          <span className="tag">Business automation</span>
+                        {cell4.tag.map((value, index)=>{
+                            return <span  className="tag" key={value}>{value}</span>
+                          })}
                         </div>
-                        <div className="title_cell">Online, a super-gap package of repetitive tasks that ends with 7 tools.</div>
-                        <div className="des_cell">Lectures for you who are hit by repetitive work and overtime. 
-                          Whether it's office, finance, marketing or design, don't worry now! 
-                          Here are some tips on how to work smartly, quickly and efficiently! 
-                          Meet the 7 solution tools now.
+                        <div className="title_cell">{cell4.title}</div>
+                        <div className="des_cell">{cell4.des}
                         </div>
                       </div>
                     </div>

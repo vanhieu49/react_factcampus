@@ -21,8 +21,6 @@ class CompContent extends React.Component {
                 <CompContent_2 />
                 <CompContent_3 />
                 <CompContent_4 />
-                
-
                 <div className="banner">
                   <a className="banner_left">
                     <div className="banner_inside">
