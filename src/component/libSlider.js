@@ -8,44 +8,48 @@ window.addEventListener("DOMContentLoaded", () => {
     tabs.forEach(tab => {
       tab.addEventListener("click", changeTabs);
     });
-    // 
-    next.addEventListener("click", functionNext)
+
+    next.addEventListener("click", functionNext);
+
     function functionNext(){
         const ariaSelected = document.querySelector('[aria-selected="true"]');
         let cuidnum =Number(ariaSelected.id.replace('tab-',''));
+
         ariaSelected.setAttribute("aria-selected", false);
+        document.querySelector(`[aria-labelledby="tab-${cuidnum}"]`).classList.remove("ca_active");
+ 
         cuidnum++;
         if(cuidnum>tabs.length) cuidnum = 1;
+
         document.getElementById(`tab-${cuidnum}`)
-            .setAttribute("aria-selected", true);
-        document.querySelectorAll('[role="tabpanel"]')
-            .forEach(p => p.setAttribute("hidden", true));
-        document.querySelector(`[aria-labelledby="tab-${cuidnum}"]`)
-            .removeAttribute("hidden");
+            .setAttribute("aria-selected", true)
+        document.querySelector(`[aria-labelledby="tab-${cuidnum}"]`).classList.add("ca_active");
     }
+
     previous.addEventListener("click", ()=>{
         const ariaSelected = document.querySelector('[aria-selected="true"]');
         let cuidnum =Number(ariaSelected.id.replace('tab-',''));
+
         ariaSelected.setAttribute("aria-selected", false);
+        document.querySelector(`[aria-labelledby="tab-${cuidnum}"]`).classList.remove("ca_active");
+
         cuidnum--;
         if(cuidnum<1) cuidnum = tabs.length;
+
         document.getElementById(`tab-${cuidnum}`)
             .setAttribute("aria-selected", true);
-        document.querySelectorAll('[role="tabpanel"]')
-            .forEach(p => p.setAttribute("hidden", true));
-        document.querySelector(`[aria-labelledby="tab-${cuidnum}"]`)
-            .removeAttribute("hidden");
+        document.querySelector(`[aria-labelledby="tab-${cuidnum}"]`).classList.add("ca_active");
     })
     
     
     let interval = setInterval(()=>{
         functionNext()
-    },4000)
+    },6000)
     
     play.addEventListener("click", () =>{
         interval = setInterval(()=>{
             functionNext()
-        },4000)
+        },6000)
         pause.classList.add("active")
         play.classList.remove("active")
     })
@@ -62,22 +66,24 @@ window.addEventListener("DOMContentLoaded", () => {
     const target = e.target;
     const parent = target.parentNode;
     const grandparent = parent.parentNode;
-    console.log(target)
     // Remove all current selected tabs
     parent
-      .querySelectorAll('[aria-selected="true"]')
-      .forEach(t => t.setAttribute("aria-selected", false));
+        .querySelectorAll('[aria-selected="true"]')
+        .forEach(t => t.setAttribute("aria-selected", false));
   
     // Set this tab as selected
     target
-    .setAttribute("aria-selected", true);
+        .setAttribute("aria-selected", true);
 
     grandparent.parentNode.parentNode
-    .querySelectorAll('[role="tabpanel"]')
-    .forEach(p => p.setAttribute("hidden", true));
+        .querySelectorAll('[role="tabpanel"]')
+        .forEach(p => p.classList.remove("ca_active"));
 
     grandparent.parentNode.parentNode
-    .querySelector(`#${target.getAttribute("aria-controls")}`)
-    .removeAttribute("hidden");
+        .querySelector(`#${target.getAttribute("aria-controls")}`)
+        .classList.remove("ca_active")
+
+    grandparent.parentNode.parentNode
+        .querySelector(`#${target.getAttribute("aria-controls")}`).classList.add("ca_active")
   
   }

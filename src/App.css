@@ -240,6 +240,7 @@ hr{
 }
 .notice-title{
   font-size: 12px;
+  color: #6e6e73;
 }
 i.icon--notice{
   position: relative;
@@ -438,6 +439,7 @@ i.icon--notice:after{
   -webkit-line-clamp: 2 ;
   -webkit-box-orient: vertical;
   color: #222222;
+  height: 42.5px;
 
 }
 .des_cell{
@@ -603,6 +605,9 @@ i.icon--notice:after{
 /* End content */
 
 /* ================= begin slider ==============*/
+body{
+  font-size: 62.5%;
+}
 a{
   text-decoration: none;
 }
@@ -611,75 +616,109 @@ img{
   max-width:100%;
   height: auto;
 }
-._block{
+
+/* -------------------------- */
+
+.carousel_container{
+  padding-top: 150px;
+  margin-bottom: 15px;
+}
+.carousel_container .carousel .ca_track{
+  position: relative;
+  height: 29rem;
+}
+
+.ca_track .ca_slide{
+  background-color: black;
+  opacity: 0;
+  top: 0;
+  position: absolute;
+  width: 100%;
+}
+.ca_track .ca_active{
+  opacity: 1;
+  transition-duration: 1s;
+  top: 0;
+  position: absolute;
+}
+.ca_slide:nth-child(4){
+  background-color: rgb(73, 102, 245);
+}
+.ca_slide:nth-child(5){
+  background-color: rgb(255, 169, 187);
+}
+
+.ca_slide[aria-hidden=true]{
+  display: none;
+}
+.ca_slide .ca_width{
+  margin: 0 auto;
+  max-width: 128rem;
+  padding: 0 4%;
+}
+.ca_slide a{
+  cursor: pointer;
+}
+a._block{
   display: block;
   outline: 0 none;
 }
-
-#carousel{
+.ca_slide a div{
   position: relative;
-  
+  overflow: hidden;
 }
-.carousel_container{
-  position: relative;
-  padding-top: 175px;
-  
+.ca_slide a div picture{
+  transform: scale(1);
+  transition: all .5s;
+  transition-property: all;
+  transition-duration: 4s;
+  transition-timing-function: ease-out;
+  display: block;
+  transform-origin: center;
 }
-.carousel_container .carousel{}
-.carousel_container .ca_inital{}
-.carouser_container .ca_dotted{}
-
-.carousel .ca_list{}
-.ca_list .ca_track{}
-.ca_list .ca_track .ca_slide[aria-hidden=true]{
-  display: none;
+.ca_slide.ca_active a div picture{
+  transform: scale(1.05);
 }
-.ca_list .ca_track .ca_slide a{
-  cursor: pointer;
-}
-.ca_list .ca_track .ca_slide a div{
-  position: relative;
-}
-.ca_list .ca_track .ca_slide a div .ca_panel{
+.ca_slide a div .ca_panel{
   position: absolute;
-  top: 30%;
+  top: 25%;
   left: 10%;
   color: white;
+  animation: revealPanels .8s ease-in-out forwards;
+  width: 45%;
 }
-.ca_list .ca_track .ca_slide a div .ca_panel h3{
- font-size: 45px;
+.ca_slide a div .ca_panel h3{
+ font-size: 3rem;
 }
-.ca_list .ca_track .ca_slide a div .ca_panel p{
-  font-size: 30px;
+.ca_slide a div .ca_panel p{
+  font-size: 2rem;
 }
-
-.ca_grid{
+/* -------------------------- */
+.carousel_container .ca_grid{
   margin: 0 auto;
-  max-width: 98rem;
+  max-width: 83rem;
   padding: 0 10%;
 }
 .ca_grid .ca_func{
- position: relative;
- bottom: 4rem;
+  position: relative;
 }
+
 .ca_grid .ca_func .ca_control{
   position: absolute;
   right: 0;
   bottom: 0;
   display: flex;
+  transform: translateY(-30px);
 }
 .ca_grid .ca_func .ca_control button{
   border: none;
   padding: 10px;
   background: white;
-  /* color: #d3d3d3; */
   cursor: pointer;
   opacity: 0.7;
-
   transition-property: all;
   transition-duration: .2s;
   transition-timing-function: ease-out;
-
 }
 .ca_grid .ca_func .ca_control button:hover{
   opacity: 1;
@@ -692,12 +731,19 @@ img{
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
+.ca_grid .ca_func .ca_control .btn{
+  display: none;
+}
+.ca_grid .ca_func .ca_control .active{
+  display: block;
+}
+
 .ca_grid .ca_func .ca_dots{
   position: absolute;
   left: 0;
   bottom: 0;
+  transform: translateY(-40px);
 }
-
 .ca_grid .ca_func div.ca_dots button{
   border-radius: 50%;
   padding: 7px;
@@ -709,6 +755,7 @@ img{
   transition-property: all;
   transition-duration: .2s;
   transition-timing-function: ease-out;
+  margin-right: 15px;
 }
 .ca_grid .ca_func div.ca_dots button:hover{
   opacity: 1;
@@ -720,10 +767,107 @@ img{
   opacity: 1;
 }
 
-.btn{
-  display: none;
+
+@media only screen and (min-width: 320px) {
+  /* For mobile */
+  .carousel_container .carousel .ca_track {
+      height: 12.5rem;
+      
+  }
+  .ca_track .ca_slide a div .ca_panel h3{
+      font-size: 1rem;
+  }
+  .ca_track .ca_slide a div .ca_panel p{
+       font-size: 0.5rem;
+  }
+  .ca_slide .ca_width{
+      padding: 0 1%;
+  }
+  .img_banner {
+      vertical-align: top;
+      max-width: 100%;
+      height: 13rem;
+      object-fit: unset;
+  }
+  .ca_grid .ca_func .ca_control{
+      display: none;
+  }
+  .ca_grid .ca_func div.ca_dots button {
+      padding: 0.2rem;
+  }
+  .ca_grid .ca_func .ca_dots {
+      transform: translateY(-5px);
+      display: flex;
+      justify-content: center;
+      position: relative;
+  }
+  .ca_grid .ca_func div.ca_dots button[aria-selected=true] {
+      width: 20px;
+  }
 }
-.active{
-  display: block;
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .carousel_container .carousel .ca_track {
+      height: 25rem;
+     
+  }
+  .ca_track .ca_slide a div .ca_panel h3{
+      font-size: 2rem;
+  }
+  .ca_track .ca_slide a div .ca_panel p{
+       font-size: 1rem;
+  }
+  .ca_slide .ca_width{
+      padding: 0 1%;
+  }
+  .img_banner {
+      vertical-align: top;
+      max-width: 100%;
+      height: 25rem;
+      object-fit: cover;
+  }
+  .ca_grid .ca_func .ca_control{
+      display: flex;
+  }
+  .ca_grid .ca_func .ca_dots {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      transform: translateY(-40px);
+  }   
+  .ca_grid .ca_func div.ca_dots button {
+      padding: 0.4rem;
+  }
+  .ca_grid .ca_func div.ca_dots button[aria-selected=true] {
+      width: 50px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  /* For desktop: */
+  .carousel_container .carousel .ca_track {
+      height: 31.5rem;
+      
+  }
+  .ca_track .ca_slide a div .ca_panel h3{
+      font-size: 3rem;
+  }
+  .ca_track .ca_slide a div .ca_panel p{
+       font-size: 2rem;
+  }
+  .ca_width{
+      padding: 0 4%;
+  }
+  .img_banner{
+    height: auto;
+  }
+  .ca_grid .ca_func div.ca_dots button {
+      padding: 0.4rem; 
+  }
+  .ca_grid .ca_func div.ca_dots button[aria-selected=true] {
+      width: 50px;
+  }
+  
 }
 /* =================== end slider ==================== */
