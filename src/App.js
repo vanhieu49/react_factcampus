@@ -2,6 +2,7 @@ import "./App.css";
 
 import Header from "./component/CompHeader";
 import Footer from "./component/CompFooter";
+import CompContent from "./component/CompContent";
 import Slider from "./component/CompSlider";
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
     <div>
       <Header />
       <Slider />
-
+      <CompContent />
       <Footer />
     </div>
   );
